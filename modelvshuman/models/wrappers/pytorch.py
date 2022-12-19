@@ -41,7 +41,7 @@ class PytorchModel(AbstractModel):
         if x.is_cuda:
             return x.detach().cpu().numpy()
         else:
-            return x.numpy()
+            return x.detach().numpy()
 
     def softmax(self, logits):
         assert type(logits) is np.ndarray
@@ -50,7 +50,7 @@ class PytorchModel(AbstractModel):
         softmax_output = softmax_op(torch.Tensor(logits))
         return self.to_numpy(softmax_output)
 
-    def forward_batch(self, images):
+    def forward_batch(self, images : torch.Tensor):
         assert type(images) is torch.Tensor
 
         self.model.eval()

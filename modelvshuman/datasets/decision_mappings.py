@@ -10,7 +10,6 @@ from ..helper import wordnet_functions as wnf
 class DecisionMapping(ABC):
     def check_input(self, probabilities):
         assert type(probabilities) is np.ndarray
-        assert (probabilities >= 0.0).all() and (probabilities <= 1.0).all()
 
     @abstractmethod
     def __call__(self, probabilities):

@@ -7,7 +7,7 @@ from os.path import join as pjoin
 # DIRECTORIES
 ##################################################################
 
-PROJ_DIR = str(os.environ.get("MODELVSHUMANDIR", "model-vs-human"))
+PROJ_DIR = r"""C:\Users\Tal\Desktop\Docs\מדמח פסיכולוגיה מח\תשפג 2023\סמסטר א\סמינר מודלים קוגנטיביים לזיהוי פנים\model-vs-human"""
 assert (PROJ_DIR != "None"), "Please set the 'MODELVSHUMANDIR' environment variable as described in the README"
 CODE_DIR = pjoin(PROJ_DIR, "modelvshuman")
 DATASET_DIR = pjoin(PROJ_DIR, "datasets")
